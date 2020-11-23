@@ -100,9 +100,9 @@ int main(void)
 
   if(f_mount(&myFATAFS, SDPath, 1) == FR_OK){
 	  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_0);
-	  char myPath[] = "ForAlban.txt\0";
+	  char myPath[] = "Data.csv\0";
 	  f_open(&myFILE, myPath, FA_WRITE | FA_CREATE_ALWAYS);
-	  char myData[] = "Hi_Alban";
+	  char myData[] = "This is some data. This is some more data";
 	  f_write(&myFILE, myData, sizeof(myData), &testByte);
 	  f_close(&myFILE);
 	  HAL_Delay(3000);
